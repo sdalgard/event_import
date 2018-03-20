@@ -55,5 +55,17 @@ panda = pd.Series(trend_arr)
 panda_to_jsonfile(panda, 'trend_news.json')
 
 
+count = 0
+art_arr = []
+# print er.getLocationUri("Italy")
+iter = QueryEventsIter(locationUri = "http://en.wikipedia.org/wiki/Rome")
+for art in iter.execQuery(er, lang = "eng"):
+    art_arr.append(art)
+    count += 1
+    if count > 20:
+        break
+panda = pd.Series(art_arr)    
+panda_to_jsonfile(panda, 'event_rome.json')
+
 
 
