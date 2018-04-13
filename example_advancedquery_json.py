@@ -20,10 +20,11 @@ cq = ComplexEventQuery(
                     BaseQuery(locationUri = milanLocationUri)
                 ]
             ),
-            BaseQuery(dateStart = "2018-01-01", 
+            BaseQuery(dateStart = "2017-01-01", 
                       dateEnd = "2018-02-28",
                       lang = "eng"),
-            BaseQuery(minArticlesInEvent = 400)
+            BaseQuery(conceptUri = er.getConceptUri("Sport"))
+#            BaseQuery(minArticlesInEvent = 400)
         ]
     )
 )
